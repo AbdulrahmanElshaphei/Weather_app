@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Start Nav -->
+  <nav class="navbar navbar-expand-lg py-4" id="navbar-example">
+    <div class="container px-lg-5">
+      <div class="title-logo d-flex align-items-center">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+        <div class="title-logo d-flex flex-column">
+          <h1 class="text-white fs-6 fw-bold">Weather</h1>
+          <small class="tagline-edit">tagline goes here</small>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active me-2 border border-2 rounded rounded-5 px-4 py-1 home-nav-edit"
+              aria-current="page" id="Home" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  me-2 rounded rounded-5 px-4 py-1" href="#about" id="About">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  me-2 rounded rounded-5 px-4 py-1" href="#team">Live cameras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2 rounded rounded-5 px-4 py-1" href="#projects">Photo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded rounded-5 px-4 py-1" href="#services">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Nav -->
+
+  <main>
+    <!-- Start Home -->
+    <header class="Home">
+      <div class="hero" style="background-image: url(img/banner.png);" alt="">
+        <div class="container py-5">
+          <div class="saerch-div">
+            <input type="text" class="form-control my-4 rounded-5 edit-search py-3" id="search" placeholder="Find your location...">
+            <button class="border-0 py-2 px-5 rounded rounded-5 text-white button-search">Find</button>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row rounded-2 forecast-container">
+            <div class="col-md-4 gx-0">
+              <div class="today-forecast">
+                <div class="forecast-header rounded-start-2 py-2 d-flex justify-content-between">
+                  <div class="day px-2" id="Today_Name"></div>
+                  <div class="all d-flex justify-content-center align-items-center">
+                    <m id="Today_number"></m><div class="date px-2" id="Today_month"></div>
+                  </div>
+                </div>
+
+                <div class="forecast-content py-3 px-3">
+                  <div class="location fs-4" id="today_location"></div>
+                  <div class="degree">
+                    <div class="num">
+                      <p id="today_temp"><sup></sup></p>
+                    </div>
+                    <div class="forecast-icon">
+                      <img src="img/116.webp" class="w-25" id="todayCondationImg" alt="">
+                    </div>
+                  </div>
+                  <div class="custom text-info my-3" id="todayCondationtext"></div>
+                  <span class="me-2">
+                    <img src="img/icon-umberella.png" alt="">
+                    <m id="humidity"></m>
+                  </span>
+                  <span class="me-2">
+                    <img src="img/icon-wind.png" alt="">
+                    <m id="windspeed"></m>
+                  </span>
+                  <span>
+                    <img src="img/icon-compass.png" alt="">
+                    <m id="wind_dir"></m>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 gx-0">
+              <div class="Second-forecast">
+                <div class="forecast-header1 py-2 text-center">
+                  <div class="day px-2 next_days"></div>
+                </div>
+
+                <div class="forecast-content">
+                  <div class="forecast-icon text-center">
+                    <img src="img/176.webp" class="next_condition_Img" alt="">
+                  </div>
+                  <div class="degree text-center py-2">
+                    <div class="num2">
+                      <m class="next_MaxTemp"><sup></sup></m>
+                    </div>
+                    <div class="num-under">
+                      <m class="next_mintemp"><sup></sup></m>
+                    </div>
+
+                  </div>
+                  <div class="custom text-info my-4 text-center next_texttemp"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 gx-0">
+              <div class="third-forecast">
+                <div class="forecast-header rounded-end-2 py-2 text-center">
+                  <div class="day px-2 next_days"></div>
+                </div>
+
+                <div class="forecast-content">
+                  <div class="forecast-icon text-center">
+                    <img src="img/116.webp" class="next_condition_Img" alt="">
+                  </div>
+                  <div class="degree text-center py-2">
+                    <div class="num2">
+                      <m class="next_MaxTemp"><sup></sup></m>
+                    </div>
+                    <div class="num-under">
+                      <m class="next_mintemp"><sup></sup></m>
+                    </div>
+
+                  </div>
+                  <div class="custom text-info my-4 text-center next_texttemp"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Home -->
+
+    <!-- Start Footer -->
+    <footer class="container-fluid site-footer">
+      <div class="container site-footer2 py-5">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <form action="#" class="subscribe-form position-relative">
+              <input type="text" class="form-control my-4 rounded-5 edit-subscribe py-3" placeholder="Enter your email to subscribe...">
+              <input type="submit" class="border-0 py-2 px-md-5 px-4 rounded rounded-5 text-white subscribe-search" value="Subscribe">
+            </form>
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div class="social-links">
+              <a href="#" class="fs-5"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="fs-5"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="fs-5"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="#" class="fs-5"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+        </div>
+        <p class="colophon">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </main>
+
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
