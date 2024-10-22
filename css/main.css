@@ -54,14 +54,9 @@ html{
 
 
 /* Start Home */
-.Home{
-    height: 80vh;
-}
-
 .hero{
     background-size: cover;
     background-position: center center;
-    height: 400px;
 }
 
 .edit-search::placeholder{
