@@ -1,6 +1,20 @@
 const apiKey="216e6c61d6b04017a0a144240242110"
 let search = document.querySelector("#search")
 
+
+// current Location
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(pos){
+        const lat = pos.coords.latitude
+        const long = pos.coords.longitude
+        getWeatherData(`${lat},${long}`)
+        startApp(`${lat},${long}`)
+    })
+}else{
+    console.log("not Allowed");
+}
+
+
 // Today
 let Today_Name = document.querySelector("#Today_Name")
 let Today_number = document.querySelector("#Today_number")
@@ -56,7 +70,7 @@ function displaynextDays(data){
 }
 
 // Start program
-async function startApp(city="cairo"){
+async function startApp(city){
     let weatherData = await getWeatherData(city)
     if(!weatherData.error){
         displayDataToday(weatherData)
@@ -64,7 +78,6 @@ async function startApp(city="cairo"){
     }
 }
 
-startApp()
 
 // Search
 search.addEventListener("input",function(){
